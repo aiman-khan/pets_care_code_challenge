@@ -7,10 +7,10 @@ void loading(BuildContext context) {
   if (_overlayEntry != null) return;
   _overlayEntry = OverlayEntry(
     builder: (context) => Container(
-      color: R.colors.white_FFFFFF.withOpacity(0.5),
+      color: R.colors.white.withOpacity(0.5),
       child: Center(
         child: CircularProgressIndicator(
-          color: R.colors.navyBlue_263C51,
+          color: R.colors.black,
         ),
       ),
     ),
