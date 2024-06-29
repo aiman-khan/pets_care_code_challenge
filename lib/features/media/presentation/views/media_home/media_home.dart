@@ -5,7 +5,9 @@ import 'package:pet_care_task/common/extensions/size.dart';
 import 'package:pet_care_task/features/media/domain/enums/media_type.dart';
 import 'package:pet_care_task/features/media/presentation/providers/query/query_provider.dart';
 import 'package:pet_care_task/features/media/presentation/providers/search_media/search_media_provider.dart';
+import 'package:pet_care_task/features/media/presentation/views/media_home/widgets/language_toggle.dart';
 import 'package:pet_care_task/features/media/presentation/views/media_home/widgets/media_carousel_widget.dart';
+import 'package:pet_care_task/util/export/app_localization.dart';
 import 'package:pet_care_task/util/resources/r.dart';
 
 class MediaHome extends ConsumerWidget {
@@ -30,6 +32,13 @@ class MediaHome extends ConsumerWidget {
           physics: const BouncingScrollPhysics(),
           child: Column(
             children: [
+              16.hb,
+
+              const Align(
+                alignment: Alignment.topRight,
+                child: LanguageToggleWidget(),
+              ),
+
               24.hb,
 
               /// [ Search Bar ]
@@ -39,7 +48,7 @@ class MediaHome extends ConsumerWidget {
                   ref.invalidate(searchMediaProvider);
                 },
                 decoration: InputDecoration(
-                  hintText: 'Search Movies',
+                  hintText: AppLocalizations.of(context)!.searchMedia,
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12.r),
                   ),
