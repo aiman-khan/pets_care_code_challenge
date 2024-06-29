@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:pet_care_task/features/media/domain/models/media_item/media_item_model.dart';
+import 'package:pet_care_task/features/media/presentation/views/image_view/image_view.dart';
 import 'package:pet_care_task/features/media/presentation/views/media_home/media_home.dart';
 import 'package:pet_care_task/features/media/presentation/views/media_home/widgets/media_details_widget.dart';
 import 'package:pet_care_task/util/router/paths.dart';
@@ -17,6 +18,13 @@ final router = GoRouter(
       builder: (context, state) {
         final data = state.extra as MediaItemModel;
         return MediaDetailsWidget(media: data);
+      },
+    ),
+    GoRoute(
+      path: RoutePaths.imageView,
+      builder: (context, state) {
+        final data = state.extra as String;
+        return ImageView(image: data);
       },
     ),
   ],
