@@ -61,6 +61,12 @@ class MediaCarouselWidget extends ConsumerWidget {
                     final image =
                         type.isPerson ? media.profilePath : media.posterPath;
 
+                    mediaItems.sort((a, b) {
+                      final aName = a.name ?? a.title ?? '';
+                      final bName = b.name ?? b.title ?? '';
+                      return aName.compareTo(bName);
+                    });
+
                     return InkWell(
                       onTap: () => GoRouter.of(context).push(
                         RoutePaths.mediaDetails,
